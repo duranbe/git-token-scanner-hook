@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# If any command fails, exit immediately with that command's exit status
+set -eo pipefail
+
+# Find all changed files for this commit
+# Compute the diff only once to save a small amount of time.
+CHANGED_FILES=$(git diff --name-only --cached --diff-filter=ACMR)
+
+python3 .git/hooks/scan.py $CHANGED_FILES
