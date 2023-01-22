@@ -4,6 +4,9 @@ import re
 import mmap
 
 
+TOKENS_REGEX = ".git/hooks/regexes.json"
+
+
 class TokenFoundException(BaseException):
 
     def __init__(self, token_type, filename, *args):
@@ -12,12 +15,12 @@ class TokenFoundException(BaseException):
 
     def __str__(self):
 
-        return self.token_type + "       found in " + self.filename
+        return self.token_type + " found in " + self.filename
 
 
 if __name__ == "__main__":
     
-    with open(".git/hooks/regexes.json", "r") as f:
+    with open(TOKENS_REGEX, "r") as f:
         data = json.load(f).items()
 
     for i in range(1, len(sys.argv)):
