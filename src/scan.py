@@ -15,7 +15,7 @@ class TokenFoundException(BaseException):
 
     def __str__(self):
 
-        return self.token_type + " found in " + self.filename
+        return f"{self.token_type} found in {self.filename}"
 
 
 if __name__ == "__main__":
