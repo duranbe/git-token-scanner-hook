@@ -8,6 +8,9 @@ TOKENS_REGEX = ".git/hooks/regexes.json"
 
 
 class TokenFoundException(BaseException):
+    """"
+    Exception when token is found
+    """
 
     def __init__(self, token_type, filename, *args):
         self.token_type = token_type
