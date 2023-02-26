@@ -4,7 +4,7 @@ A pre-commit git hook to find tokens and API keys
 ## Usage 
 
 - Download the repository and add the hook to your project in the .git/hooks/ folder.
-- Or via CLI using `
+- Or via CLI using 
 ```bash
 python3 scan.py <file1> <file2>
 ```
